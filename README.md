@@ -33,7 +33,7 @@ How would you modify the code to make the chatbot lower latency & respond faster
 
 Your solution will be evaluated based on:
 
-1. Reduction in overall latency (comparable to the "reference solution" above)
+1. Reduction in overall latency (comparable to the "reference solution" above). Please share a demo video so we can easily evaluate.
 2. Maintenance of conversation quality and realism (i.e the chatbot doesn't interrupt the human speaker while they're in the middle of speaking. The chatbot must say the same things that the reference solution would have said.)
 3. Code quality and clarity of explanation in README.md
 
@@ -45,12 +45,6 @@ Your solution will be evaluated based on:
 3. Set your OpenAI, AssemblyAI, and ElevenLabs API keys in `.env` - you should have received them via email.
 4. Run the current implementation to understand its behavior by running `python3 main.py`
 5. Begin your optimization process. Document your changes and reasoning in this README.md file when done.
-
-
-## Your Approach
-
-Please describe your approach here.
-Please also include a recorded video showing how fast your chatbot implementation is to respond.
 
 ## Poetry Setup
 
@@ -71,3 +65,10 @@ For example you could use:
 - Llama for the chatbot
 - bark or tortoise for TTS
   Try building a version of this chatbot that is local-only and see what speedup you achieve!
+
+
+## Your Approach
+
+Please describe your approach here.
+Please also include a recorded video showing how fast your chatbot implementation is to respond.
+
