@@ -8,6 +8,7 @@ The chatbot responds when the user falls silent for some time, simulating a natu
 The current implementation is relatively slow to respond the the user - the goal is to make it faster.
 
 Demo of the current implementation: https://www.loom.com/share/ce9d6443c02e4ae19e5ca3994b58e3df
+
 Demo of a reference solution that responds faster: https://www.loom.com/share/c276d63215b9435b89c72a7e02cdb173
 
 ## Current Implementation
