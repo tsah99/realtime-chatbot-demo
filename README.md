@@ -5,9 +5,10 @@
 This project aims to create a realistic, low-latency chatbot that functions as an AI sales assistant for Nooks, an AI-powered sales development platform.
 The chatbot responds when the user falls silent for some time, simulating a natural conversation flow.
 
-https://www.loom.com/share/ce9d6443c02e4ae19e5ca3994b58e3df
-
 The current implementation is relatively slow to respond the the user - the goal is to make it faster.
+
+Demo of the current implementation: https://www.loom.com/share/ce9d6443c02e4ae19e5ca3994b58e3df
+Demo of a reference solution that responds faster: https://www.loom.com/share/c276d63215b9435b89c72a7e02cdb173
 
 ## Current Implementation
 
@@ -22,6 +23,8 @@ The chatbot listens to user input, transcribes it in real-time, and generates a 
 ## Task
 
 Assume that you are not allowed to modify the services used (you must use Assembly's hosted model for STT, OpenAI's GPT-4 for the chatbot, and ElevenLabs with this voice setting for TTS).
+In addition, you are not allowed to tinker with certain configuration settings that affect the bot's realism. For example, the Assembly chatbot waits 500ms for the user to be silent before a response. This adds to the perceived latency (because the chatbot only responds after 500ms), but is necessary to maintain the realism of the bot and not have it interrupt you mid phrase. Your solution must maintain the property of waiting for 500ms of silence from the user before any bot responds, and should NOT configure this to be lower (for higher latency) or higher (for more realism).
+
 How would you modify the code to make the chatbot lower latency & respond faster?
 
 ### Evaluation Criteria
@@ -31,6 +34,9 @@ Your solution will be evaluated based on:
 1. Reduction in overall latency
 2. Maintenance of conversation quality and realism (i.e the chatbot doesn't interrupt the human speaker while they're in the middle of speaking)
 3. Code quality and clarity of explanation
+
+Please 
+
 
 ## Getting Started
 
