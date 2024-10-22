@@ -24,6 +24,7 @@ The chatbot listens to user input, transcribes it in real-time, and generates a 
 ## Task
 
 Assume that you are not allowed to modify the services used (you must use Assembly's hosted model for STT, OpenAI's GPT-4 for the chatbot, and ElevenLabs with this voice setting for TTS).
+
 In addition, you are not allowed to tinker with certain configuration settings that affect the bot's realism. For example, the Assembly chatbot waits 500ms for the user to be silent before a response. This adds to the perceived latency (because the chatbot only responds after 500ms), but is necessary to maintain the realism of the bot and not have it interrupt you mid phrase. Your solution must maintain the property of waiting for 500ms of silence from the user before any bot responds, and should NOT configure this to be lower (for higher latency) or higher (for more realism).
 
 How would you modify the code to make the chatbot lower latency & respond faster?
@@ -32,7 +33,7 @@ How would you modify the code to make the chatbot lower latency & respond faster
 
 Your solution will be evaluated based on:
 
-1. Reduction in overall latency
+1. Reduction in overall latency (comparable to the "reference solution" above)
 2. Maintenance of conversation quality and realism (i.e the chatbot doesn't interrupt the human speaker while they're in the middle of speaking)
 3. Code quality and clarity of explanation
 
