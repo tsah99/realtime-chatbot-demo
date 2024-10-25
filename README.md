@@ -51,7 +51,7 @@ Your solution will be evaluated based on:
 If you're getting stuck with installation issues, we offer an alternative Poetry-based installation method.
 
 1. Install [Poetry](https://python-poetry.org/docs/#installing-with-pipx)
-2. Install all requirements by running `poetry install`
+2. Install all requirements by running `poetry install`. You will need to `brew install ffmpeg`, `brew install portaudio`, `pip3 install "assemblyai[extras]"` (MacOS) if you haven't already.
 3. Run the current implementation by running `poetry run python3 main.py`
 
 Good luck!
