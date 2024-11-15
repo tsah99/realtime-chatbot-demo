@@ -42,6 +42,11 @@ Your solution will be evaluated based on:
 
 1. Review the existing code in `main.py`, `lib/sales_chatbot.py`, and `lib/elevenlabs_tts.py`
 2. Install the requirements by running `pip install -r requirements.txt` (or use a virtual environment if you prefer)
+```
+python3 -m venv nooks-venv
+source nooks-venv/bin/activate
+pip install -r requirements.txt
+```
 3. Set your OpenAI, AssemblyAI, and ElevenLabs API keys in `.env` - you should have received them via email.
 4. Run the current implementation to understand its behavior by running `python3 main.py`
 5. Begin your optimization process. Document your changes and reasoning in this README.md file when done.

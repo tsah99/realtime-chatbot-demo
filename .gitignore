@@ -125,6 +125,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+nooks-venv/
 ENV/
 env.bak/
 venv.bak/
