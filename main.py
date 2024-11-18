@@ -62,8 +62,6 @@ class VoiceBot:
         # generate response from OpenAI
         response = self.chatbot.generate_response(transcript)
 
-        print("[Bot]: ", response)
-
         # speak response using ElevenLabs
         speak(response)
         

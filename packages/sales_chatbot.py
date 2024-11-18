@@ -46,15 +46,22 @@ class SalesChatbot:
     def generate_response(self, user_input):
         self.conversation_history.append({"role": "user", "content": user_input})
 
-        response = client.chat.completions.create(
+        response_stream = client.chat.completions.create(
             model="gpt-4",
-            messages=self.conversation_history
+            messages=self.conversation_history,
+            stream=True
         )
 
-        ai_response = response.choices[0].message.content
+        response = ""
+        print("[Bot]: " + response, end="\r")
+        for chunk in response_stream:
+            if chunk.choices[0].delta.content is not None:
+                response += chunk.choices[0].delta.content
+                print("[Bot]: " + response, end="\r")
+                yield chunk.choices[0].delta.content
+        
+        ai_response = response
         self.conversation_history.append({"role": "assistant", "content": ai_response})
-
-        return ai_response
 
     def get_conversation_history(self):
         return self.conversation_history

@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from elevenlabs import play
+from elevenlabs import stream
 from elevenlabs.client import ElevenLabs
 
 # Load environment variables
@@ -18,8 +18,9 @@ def speak(text):
         audio = client.generate(
             text=text,
             voice=ELEVENLABS_VOICE_ID,
-            model="eleven_monolingual_v1"
+            model="eleven_monolingual_v1",
+            stream=True
         )
-        play(audio)
+        stream(audio)
     except Exception as e:
         print(f"Error in text-to-speech: {str(e)}")
