@@ -74,6 +74,10 @@ For example you could use:
 
 ## Your Approach
 
-Please describe your approach here.
-Please also include a recorded video showing how fast your chatbot implementation is to respond.
+*Demo Video: [Loom](https://www.loom.com/share/f48bebcc1a6e4defa28f212c7b32bdf6?sid=42b8ed21-5e67-41fa-9777-0596f48290ae)*
 
+I examined the intial code execution flow and found that the bottleneck was in blocking nature of the LLM calls before the TTS audio generation. The initial solution waited for the LLM to generate the entire response before calling the ElevenLabs TTS client to generate the audio to play back to the user, introducing unnecessary latency since streaming APIs are avialable by both OpenAI and ElevenLabs.
+
+So, to reduce latency, I used the OpenAI streaming API to generate the LLM response as streamed chunks, which I passed to the ElevenLabs TTS client so that it can begin processing the audio stream while the LLM was still generating the response.
+
+I also moved the logic of the visual output of the bot's response to the SalesChatbot's `generate_response` method so that it would print the response as it was streamed from the LLM's response, providing a snappier visual cue for the new execution flow using stream processing for both the LLM and TTS.
