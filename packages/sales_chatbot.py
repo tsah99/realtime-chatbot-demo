@@ -60,6 +60,7 @@ class SalesChatbot:
                 print("[Bot]: " + response, end="\r")
                 yield chunk.choices[0].delta.content
         
+        print("[Bot]: " + response, end="\n")
         ai_response = response
         self.conversation_history.append({"role": "assistant", "content": ai_response})
 
