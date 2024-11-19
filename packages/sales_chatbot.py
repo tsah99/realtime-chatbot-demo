@@ -53,16 +53,16 @@ class SalesChatbot:
         )
 
         response = ""
-        print("[Bot]: " + response, end="\r")
+        print("[Bot]: ", end="", flush=True)
         for chunk in response_stream:
             if chunk.choices[0].delta.content is not None:
-                response += chunk.choices[0].delta.content
-                print("[Bot]: " + response, end="\r")
+                response_chunk = chunk.choices[0].delta.content
+                response += response_chunk
+                print(response_chunk, end="", flush=True)
                 yield chunk.choices[0].delta.content
         
-        print("[Bot]: " + response, end="\n")
-        ai_response = response
-        self.conversation_history.append({"role": "assistant", "content": ai_response})
+        self.conversation_history.append({"role": "assistant", "content": response})
+        print("\n")
 
     def get_conversation_history(self):
         return self.conversation_history
