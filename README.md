@@ -74,7 +74,7 @@ For example you could use:
 
 ## Your Approach
 
-*Demo Video: [Loom](https://www.loom.com/share/f48bebcc1a6e4defa28f212c7b32bdf6?sid=42b8ed21-5e67-41fa-9777-0596f48290ae)*
+*Demo Video: [Loom](https://www.loom.com/share/71f197f00c0548199671ccb4c34f0a53?sid=017c8e3c-c1dc-435f-9606-ebdd3f7a1147)*
 
 I examined the intial code execution flow and found that the bottleneck was in blocking nature of the LLM calls before the TTS audio generation. The initial solution waited for the LLM to generate the entire response before calling the ElevenLabs TTS client to generate the audio to play back to the user, introducing unnecessary latency since streaming APIs are avialable by both OpenAI and ElevenLabs.
 
